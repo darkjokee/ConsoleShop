@@ -11,7 +11,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/commons-collections4-4.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/commons-collections4-4.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -20,7 +20,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/commons-compress-1.19.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/commons-compress-1.19.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -29,7 +29,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/poi-4.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/poi-4.1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -38,7 +38,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/poi-ooxml-4.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/poi-ooxml-4.1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -47,7 +47,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/poi-ooxml-schemas-4.1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/poi-ooxml-schemas-4.1.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -56,7 +56,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/poi/xmlbeans-3.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../poi/xmlbeans-3.1.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
