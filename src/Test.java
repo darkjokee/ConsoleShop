@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Test {
     static Product carts[] = new Product[3];//创建购物车（用数组模拟）
     static int count = 0;
+
     public static void main(String[] args) throws ClassNotFoundException {
         /*
         CTRL+ALT+L
@@ -27,24 +28,17 @@ public class Test {
                 if (username.equals(users[i].getUsername()) && password.equals(users[i].getPassword())) {
                     bool = false;
                     shopping(sc);
-                    while(true) {
-                        System.out.println("查看购物车请按1");
-                        System.out.println("继续购物请按2");
-                        System.out.println("结账请按3");
-                        System.out.println("退出请按4");
+                    while (true) {
+                        System.out.println("查看购物车请按1  继续购物请按2  结账请按3  退出请按4");
                         int choose = sc.nextInt();
                         if (choose == 1) {
-                            for (Product product : carts) {
-                                if (product != null) {
-                                    System.out.print(product.getId());
-                                    System.out.print("\t" + product.getName());
-                                    System.out.print("\t\t" + product.getPrice());
-                                    System.out.println("\t\t" + product.getDesc());
-                                }
-                            }
+                            showCarts();
                         } else if (choose == 2) {
                             shopping(sc);
-                        }else if(choose==4){
+                        }else if (choose == 3) {
+                             shopEnding();
+                        } else if (choose == 4) {
+                            System.out.println("期待您的下次光临");
                             break;
                         }
                     }
@@ -81,5 +75,26 @@ public class Test {
              */
             carts[count++] = product;
         }
+    }
+
+    public static void showCarts(){
+        for (Product product : carts) {
+            if (product != null) {
+                System.out.print(product.getId());
+                System.out.print("\t" + product.getName());
+                System.out.print("\t\t" + product.getPrice());
+                System.out.println("\t\t" + product.getDesc());
+            }
+        }
+    }
+
+    public static void shopEnding(){
+        double n=0.0;
+        for (Product product : carts) {
+            if (product != null) {
+                n=n+product.getPrice();
+            }
+        }
+        System.out.println("总共"+n+"元");
     }
 }
