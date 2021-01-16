@@ -21,6 +21,7 @@ public class Test {
             String password = sc.next();
 
             //File file=new File("C:\\Users\\Administrator\\IdeaProjects\\ConsoleShop\\src\\users.xlsx");
+            InputStream inOrder = Class.forName("Test").getResourceAsStream("/order.xlsx");
             InputStream inPro = Class.forName("Test").getResourceAsStream("/product.xlsx");//  /表示的就是classpath
             InputStream in = Class.forName("Test").getResourceAsStream("/users.xlsx");//  /表示的就是classpath
             ReadProductExcel readProductExcel = new ReadProductExcel();
@@ -39,12 +40,20 @@ public class Test {
                         } else if (choose == 2) {
                             shopping(sc);
                         }else if (choose == 3) {
-                             shopEnding();
+                            int num=0;
+                            double n=0.0;
                             Order order=new Order();
                             order.setUser(users[i]);
                             order.setProducts(carts);
                             for (Product product : carts) {
+                                num=num+1;
+                                if (product != null) {
+                                    n=n+product.getPrice();
+                                    order.setShuliang(num);
+                                }
                             }
+                            System.out.print("订单总数：" +order.getShuliang() + "\n");
+                            System.out.println("总共："+n+"元");
                         } else if (choose == 4) {
                             System.exit(0);
                             break;
@@ -94,15 +103,5 @@ public class Test {
                 System.out.println("\t\t" + product.getDesc());
             }
         }
-    }
-
-    public static void shopEnding(){
-        double n=0.0;
-        for (Product product : carts) {
-            if (product != null) {
-                n=n+product.getPrice();
-            }
-        }
-        System.out.println("总共"+n+"元");
     }
 }
