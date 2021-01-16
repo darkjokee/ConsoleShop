@@ -40,20 +40,20 @@ public class Test {
                         } else if (choose == 2) {
                             shopping(sc);
                         }else if (choose == 3) {
-                            int num=0;
-                            double n=0.0;
+                            int n=0;
+                            double num=0.0;
                             Order order=new Order();
                             order.setUser(users[i]);
                             order.setProducts(carts);
                             for (Product product : carts) {
-                                num=num+1;
+                                n=n+1;
                                 if (product != null) {
-                                    n=n+product.getPrice();
-                                    order.setShuliang(num);
+                                    num=num+product.getPrice();
+                                    order.setShuliang(n);
                                 }
                             }
                             System.out.print("订单总数：" +order.getShuliang() + "\n");
-                            System.out.println("总共："+n+"元");
+                            System.out.println("总共："+num+"元");
                         } else if (choose == 4) {
                             System.exit(0);
                             break;
