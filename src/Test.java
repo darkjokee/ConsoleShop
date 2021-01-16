@@ -21,9 +21,12 @@ public class Test {
             String password = sc.next();
 
             //File file=new File("C:\\Users\\Administrator\\IdeaProjects\\ConsoleShop\\src\\users.xlsx");
+            InputStream inPro = Class.forName("Test").getResourceAsStream("/product.xlsx");//  /表示的就是classpath
             InputStream in = Class.forName("Test").getResourceAsStream("/users.xlsx");//  /表示的就是classpath
+            ReadProductExcel readProductExcel = new ReadProductExcel();
             ReadUserExcel readExcel = new ReadUserExcel();//创建对象
             User users[] = readExcel.readExcel(in);
+            Product products[] = readProductExcel.getAllProduct(inPro);
             for (int i = 0; i < users.length; i++) {
                 if (username.equals(users[i].getUsername()) && password.equals(users[i].getPassword())) {
                     bool = false;
@@ -37,8 +40,13 @@ public class Test {
                             shopping(sc);
                         }else if (choose == 3) {
                              shopEnding();
+                            Order order=new Order();
+                            order.setUser(users[i]);
+                            order.setProducts(carts);
+                            for (Product product : carts) {
+                            }
                         } else if (choose == 4) {
-                            System.out.println("期待您的下次光临");
+                            System.exit(0);
                             break;
                         }
                     }
